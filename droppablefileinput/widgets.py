@@ -3,6 +3,12 @@ from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
+# Define default texts at the module level
+DEFAULT_LABEL = _("Click here or drag and drop a file")
+DEFAULT_DROP_TEXT = _("Drag the file here or click")
+DEFAULT_LINK_TEXT = _("choose file")
+DEFAULT_DESCRIPTION_TEXT = _("to upload.")
+
 
 class DroppableFileInput(ClearableFileInput):
     template_name = "widgets/droppable_file_input.html"
@@ -10,16 +16,26 @@ class DroppableFileInput(ClearableFileInput):
     def __init__(
         self,
         attrs=None,
-        instructions="",
         auto_submit=False,
         max_file_size=None,
         allowed_types=None,
         icon_url=None,
         icon_width=None,
         icon_height=None,
+        drop_text=None,
+        link_text=None,
+        description_text=None,
+        instructions=None,
         max_size_error_message=None,
         invalid_file_type_error_message=None,
     ):
+        super().__init__(attrs)
+        self.auto_submit = auto_submit
+        self.max_file_size = max_file_size
+        self.allowed_types = allowed_types
+        self.drop_text = drop_text if drop_text is not None else DEFAULT_DROP_TEXT
+        self.link_text = link_text if link_text is not None else DEFAULT_LINK_TEXT
+        self.description_text = description_text if description_text is not None else DEFAULT_DESCRIPTION_TEXT
         super().__init__(attrs)
         self.auto_submit = auto_submit
         self.max_file_size = max_file_size
@@ -68,6 +84,9 @@ class DroppableFileInput(ClearableFileInput):
             "instructions": self.instructions,
             "max_size_error_message": self.max_size_error_message,
             "invalid_file_type_error_message": self.invalid_file_type_error_message,
+            "drop_text": self.drop_text,
+            "link_text": self.link_text,
+            "description_text": self.description_text,
         })
         return context
 

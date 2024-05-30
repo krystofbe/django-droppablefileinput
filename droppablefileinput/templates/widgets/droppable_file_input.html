@@ -11,8 +11,8 @@
             </div>
             <div class="droppablefileinput__text-container">
                 <p class="droppablefileinput__label">
-                    {% trans 'Drag the file here or click' %} <a href="#"
-    onclick="document.getElementById('{{ widget.attrs.id }}').click(); return false;">{% trans 'choose file' %}</a> {% trans 'to upload the contacts of this journey.' %}
+                    {{ widget.drop_text }} <a href="#"
+    onclick="document.getElementById('{{ widget.attrs.id }}').click(); return false;">{{ widget.link_text }}</a> {{ widget.description_text }}
                 </p>
                 <p class="droppablefileinput__instructions">{{ widget.instructions }}</p>
                 <div class="droppablefileinput__spinner"

@@ -7,7 +7,6 @@ from droppablefileinput.widgets import DroppableFileInput
 class UploadFileForm(forms.Form):
     file = forms.FileField(
         widget=DroppableFileInput(
-            label="Drag and drop a file here or click to select one",
             instructions="Only PNG files are allowed and the maximum file size is 1KB",
             auto_submit=True,
             allowed_types="image/png",
