@@ -1,0 +1,33 @@
+{% load static i18n %}
+<div class="droppablefileinput__card">
+    <div class="droppablefileinput__card-body">
+        <div class="droppablefileinput__content">
+            <div class="droppablefileinput__icon-container">
+                <img class="droppablefileinput__icon"
+                     alt=""
+                     src="{{ widget.icon_url }}"
+                     height="{{ widget.icon_height }}"
+                     width="{{ widget.icon_width }}" />
+            </div>
+            <div class="droppablefileinput__text-container">
+                <p class="droppablefileinput__label">
+                    {{ widget.label }}
+                    {% trans 'Drag the file here or click' %} <a href="#"
+    onclick="document.getElementById('{{ widget.attrs.id }}').click(); return false;">{% trans 'choose file' %}</a> {% trans 'to upload the contacts of this journey.' %}
+                </p>
+                <p class="droppablefileinput__instructions">{% trans 'Only XLXS file types are supported.' %}</p>
+                <div class="droppablefileinput__spinner"
+                     role="status"
+                     style="display: none"></div>
+            </div>
+        </div>
+        <input type="{{ widget.type }}"
+               name="{{ widget.name }}"
+               accept="{{ widget.attrs.accept|default:'*' }}"
+               data-max-file-size="{{ widget.max_file_size|default:'100M' }}"
+               data-auto-submit="{{ widget.auto_submit }}"
+               data-allowed-types="{{ widget.allowed_types|default:'' }}"
+               style="display: none"
+               id="{{ widget.attrs.id }}" />
+    </div>
+</div>

@@ -1,0 +1,107 @@
+:root {
+    --droppablefileinput-bg-gray-100: rgb(244, 244, 246);
+    --droppablefileinput-bg-gray-200: rgb(242, 242, 238);
+    --droppablefileinput-text-gray-500: rgb(132, 134, 148);
+    --droppablefileinput-text-gray-600: rgb(114, 116, 132);
+    --droppablefileinput-text-gray-700: rgb(93, 96, 115);
+    --droppablefileinput-bg-blue-100: rgb(218, 239, 245);
+    --droppablefileinput-border-radius: 1rem;
+}
+
+.droppablefileinput__card {
+    background-color: var(--droppablefileinput-bg-gray-100);
+    border: none;
+    box-shadow: none;
+    border-radius: var(--droppablefileinput-border-radius);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.droppablefileinput__card-body {
+    padding: 1.75rem 1.5rem;
+}
+
+.droppablefileinput__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--droppablefileinput-text-gray-600);
+}
+
+.droppablefileinput__icon-container {
+    margin-left: -3rem;
+    margin-top: 1rem;
+}
+
+.droppablefileinput__text-container {
+    max-width: 400px;
+
+}
+
+.droppablefileinput__icon {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-right: 1rem;
+}
+
+.droppablefileinput__label {
+    margin-bottom: 0.25rem;
+
+}
+
+.droppablefileinput__instructions {
+    color: var(--droppablefileinput-text-gray-500);
+    margin-bottom: 0;
+    margin-top: 0.75rem;
+}
+
+
+
+.droppablefileinput__spinner {
+    height: 2rem;
+    width: 2rem;
+    margin-top: 1rem;
+
+    animation: droppablefileinput__rotation 1s infinite linear;
+    border: 4px solid #e2e8f0;
+    border-radius: 100%;
+}
+
+.droppablefileinput__spinner:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    height: 100%;
+    width: 100%;
+    border-top: 4px solid #2d3748;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-radius: 100%;
+}
+
+@keyframes droppablefileinput__rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.droppablefileinput__highlight {
+    border: var(--droppablefileinput-highlight-border);
+    background-color: var(--droppablefileinput-bg-blue-100);
+}
