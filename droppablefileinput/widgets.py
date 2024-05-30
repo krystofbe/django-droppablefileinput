@@ -1,6 +1,7 @@
 from django.forms.widgets import ClearableFileInput
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 
 class DroppableFileInput(ClearableFileInput):
@@ -10,18 +11,33 @@ class DroppableFileInput(ClearableFileInput):
         self,
         attrs=None,
         label="Click here or drag and drop a file",
+        instructions="",
         auto_submit=False,
         max_file_size=None,
         allowed_types=None,
         icon_url=None,
         icon_width=None,
         icon_height=None,
+        max_size_error_message=None,
+        invalid_file_type_error_message=None,
     ):
         super().__init__(attrs)
         self.label = label
         self.auto_submit = auto_submit
         self.max_file_size = max_file_size
         self.allowed_types = allowed_types
+        self.instructions = instructions
+        if max_size_error_message is None:
+            max_size_error_message = _("The file is too large. The maximum file size is %(max_file_size)s.") % {
+                "max_file_size": max_file_size
+            }
+        self.max_size_error_message = max_size_error_message
+
+        if invalid_file_type_error_message is None:
+            invalid_file_type_error_message = _("Invalid file type. Only %(allowed_types)s files are allowed.") % {
+                "allowed_types": allowed_types
+            }
+        self.invalid_file_type_error_message = invalid_file_type_error_message
 
         # defaults for the icon
         if icon_url is None:
@@ -52,6 +68,9 @@ class DroppableFileInput(ClearableFileInput):
             "icon_url": self.icon_url,
             "icon_width": self.icon_width,
             "icon_height": self.icon_height,
+            "instructions": self.instructions,
+            "max_size_error_message": self.max_size_error_message,
+            "invalid_file_type_error_message": self.invalid_file_type_error_message,
         })
         return context
 

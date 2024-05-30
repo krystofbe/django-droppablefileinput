@@ -76,21 +76,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ? allowedTypesAttribute.split(",")
       : [];
     const autoSubmit = input.dataset.autoSubmit === "True";
+    const maxSizeErrorMessage = input.dataset.maxSizeErrorMessage;
+    const invalidFileTypeErrorMessage =
+      input.dataset.invalidFileTypeErrorMessage;
 
     if (files[0].size > maxFileSize) {
-      alert(
-        `The file is too large. Please select a file that is ${maxFileSizeAttribute} or smaller.`
-      );
+      alert(maxSizeErrorMessage);
       return;
     }
 
     const fileType = files[0].type;
     if (allowedTypes.length > 0 && !allowedTypes.includes(fileType)) {
-      alert(
-        `The file type is not allowed. Please select a file of type: ${allowedTypes.join(
-          ", "
-        )}.`
-      );
+      alert(invalidFileTypeErrorMessage);
       return;
     }
 

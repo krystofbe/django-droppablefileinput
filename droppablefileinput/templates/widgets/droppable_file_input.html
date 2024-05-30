@@ -15,7 +15,7 @@
                     {% trans 'Drag the file here or click' %} <a href="#"
     onclick="document.getElementById('{{ widget.attrs.id }}').click(); return false;">{% trans 'choose file' %}</a> {% trans 'to upload the contacts of this journey.' %}
                 </p>
-                <p class="droppablefileinput__instructions">{% trans 'Only XLXS file types are supported.' %}</p>
+                <p class="droppablefileinput__instructions">{{ widget.instructions }}</p>
                 <div class="droppablefileinput__spinner"
                      role="status"
                      style="display: none"></div>
@@ -27,6 +27,8 @@
                data-max-file-size="{{ widget.max_file_size|default:'100M' }}"
                data-auto-submit="{{ widget.auto_submit }}"
                data-allowed-types="{{ widget.allowed_types|default:'' }}"
+               data-max-size-error-message="{{ widget.max_size_error_message }}"
+               data-invalid-file-type-error-message="{{ widget.invalid_file_type_error_message }}"
                style="display: none"
                id="{{ widget.attrs.id }}" />
     </div>
