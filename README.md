@@ -1,17 +1,17 @@
 # droppablefileinput
 
 
-[![Release](https://img.shields.io/github/v/release/blackbox-innovation/droppablefileinput)](https://img.shields.io/github/v/release/blackbox-innovation/droppablefileinput)
-[![Build status](https://img.shields.io/github/actions/workflow/status/blackbox-innovation/droppablefileinput/main.yml?branch=main)](https://github.com/blackbox-innovation/droppablefileinput/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/blackbox-innovation/droppablefileinput/branch/main/graph/badge.svg)](https://codecov.io/gh/blackbox-innovation/droppablefileinput)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/blackbox-innovation/droppablefileinput)](https://img.shields.io/github/commit-activity/m/blackbox-innovation/droppablefileinput)
-[![License](https://img.shields.io/github/license/blackbox-innovation/droppablefileinput)](https://img.shields.io/github/license/blackbox-innovation/droppablefileinput)
+[![Release](https://img.shields.io/github/v/release/blackbox-innovation/django-droppablefileinput)](https://img.shields.io/github/v/release/blackbox-innovation/django-droppablefileinput)
+[![Build status](https://img.shields.io/github/actions/workflow/status/blackbox-innovation/django-droppablefileinput/main.yml?branch=main)](https://github.com/blackbox-innovation/django-droppablefileinput/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/blackbox-innovation/django-droppablefileinput/branch/main/graph/badge.svg)](https://codecov.io/gh/blackbox-innovation/django-droppablefileinput)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/blackbox-innovation/django-droppablefileinput)](https://img.shields.io/github/commit-activity/m/blackbox-innovation/django-droppablefileinput)
+[![License](https://img.shields.io/github/license/blackbox-innovation/django-droppablefileinput)](https://img.shields.io/github/license/blackbox-innovation/django-droppablefileinput)
 
 
 DroppableFileInput is a custom Django widget that enhances the usability of file input forms by allowing users to drag and drop files. This widget utilizes JavaScript to provide interactive feedback, such as highlighting the drop area when a file is dragged over and displaying file details on the page. This uses no external JavaScript dependencies, all functionality is brought by this package.
 
 
-- **Github repository**: <https://github.com/blackbox-innovation/droppablefileinput/>
+- **Github repository**: <https://github.com/blackbox-innovation/django-droppablefileinput/>
 - **Documentation**: <https://blackbox-innovation.github.io/droppablefileinput/>
 
 ## Features
@@ -26,7 +26,7 @@ DroppableFileInput is a custom Django widget that enhances the usability of file
 
 To install DroppableFileInput, you can download it directly from GitHub or use pip:
 ```python
-pip install git+https://github.com/blackbox-innovation/droppablefileinput.git
+pip install git+https://github.com/blackbox-innovation/django-droppablefileinput.git
 ```
 
 

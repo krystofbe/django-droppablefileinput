@@ -3,7 +3,7 @@ name = "droppablefileinput"
 version = "0.0.1"
 description = "DroppableFileInput is a custom Django widget that enhances the usability of file input forms by allowing users to drag and drop files. This widget utilizes JavaScript to provide interactive feedback, such as highlighting the drop area when a file is dragged over and displaying file details on the page."
 authors = ["Krystof Beuermann <fkrystof@blackbox.ms>"]
-repository = "https://github.com/blackbox-innovation/droppablefileinput"
+repository = "https://github.com/blackbox-innovation/django-droppablefileinput"
 documentation = "https://blackbox-innovation.github.io/droppablefileinput/"
 readme = "README.md"
 packages = [{ include = "droppablefileinput" }]

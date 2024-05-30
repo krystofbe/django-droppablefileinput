@@ -1,4 +1,5 @@
 import os
+
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.forms import Form
 from django.forms.fields import FileField
