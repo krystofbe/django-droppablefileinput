@@ -10,7 +10,6 @@ class DroppableFileInput(ClearableFileInput):
     def __init__(
         self,
         attrs=None,
-        label="Click here or drag and drop a file",
         instructions="",
         auto_submit=False,
         max_file_size=None,
@@ -22,7 +21,6 @@ class DroppableFileInput(ClearableFileInput):
         invalid_file_type_error_message=None,
     ):
         super().__init__(attrs)
-        self.label = label
         self.auto_submit = auto_submit
         self.max_file_size = max_file_size
         self.allowed_types = allowed_types
@@ -61,7 +59,6 @@ class DroppableFileInput(ClearableFileInput):
     def get_context(self, name, value, attrs):
         context = super().get_context(name, value, attrs)
         context["widget"].update({
-            "label": self.label,
             "auto_submit": self.auto_submit,
             "max_file_size": self.max_file_size,
             "allowed_types": self.allowed_types,

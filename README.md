@@ -86,7 +86,6 @@ Customization
 
 
 The `DroppableFileInput` widget can be customized with the following parameters:
-- `label`: Text to display in the drop area.
 - `auto_submit`: Whether to auto-submit the form upon file selection.
 - `max_file_size`: Maximum file size allowed for upload.
 - `allowed_types`: List of allowed file MIME types.
@@ -100,7 +99,6 @@ Example:
 ```python
 class UploadForm(forms.Form):
     file = forms.FileField(widget=DroppableFileInput(
-    label="Upload your file",
     auto_submit=True,
     max_file_size="10M",
     allowed_types="image/jpeg,image/png",
