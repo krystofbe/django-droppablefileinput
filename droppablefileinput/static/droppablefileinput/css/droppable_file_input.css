@@ -63,11 +63,11 @@
 }
 
 
-
 .droppablefileinput__spinner {
     height: 2rem;
     width: 2rem;
     margin-top: 1rem;
+    position: relative;
 
     animation: droppablefileinput__rotation 1s infinite linear;
     border: 4px solid #e2e8f0;
@@ -78,8 +78,8 @@
     content: "";
     display: block;
     position: absolute;
-    left: -4px;
     top: -4px;
+    left: 0;
     height: 100%;
     width: 100%;
     border-top: 4px solid #2d3748;
@@ -87,15 +87,17 @@
     border-bottom: 4px solid transparent;
     border-right: 4px solid transparent;
     border-radius: 100%;
+    box-sizing: border-box;
 }
 
+/* Keyframes für die Rotation */
 @keyframes droppablefileinput__rotation {
     from {
         transform: rotate(0deg);
     }
 
     to {
-        transform: rotate(359deg);
+        transform: rotate(360deg);
     }
 }
 
