@@ -8,7 +8,7 @@ pythonpath = ["."]
 DJANGO_SETTINGS_MODULE = "example.settings"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py311"
 line-length = 120
 fix = true
 select = [
@@ -60,7 +60,7 @@ preview = true
 
 [project]
 name = "droppablefileinput"
-version = "0.1.0"
+version = "0.1.1"
 description = "DroppableFileInput is a custom Django widget that enhances the usability of file input forms by allowing users to drag and drop files. This widget utilizes JavaScript to provide interactive feedback, such as highlighting the drop area when a file is dragged over and displaying file details on the page."
 authors = [{ name = "Krystof Beuermann", email = "krystof@blackbox.ms" }]
 readme = "README.md"
@@ -76,10 +76,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
 keywords = ["django", "widget", "file", "upload", "drag-and-drop"]
-requires-python = ">=3.12,<4.0"
+requires-python = ">=3.11,<4.0"
 dependencies = ["django>=4.0"]
 
 [project.urls]
