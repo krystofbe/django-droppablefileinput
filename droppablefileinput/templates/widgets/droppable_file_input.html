@@ -18,17 +18,19 @@
                 {% if widget.instructions %}
                 <p class="droppablefileinput__instructions">{{ widget.instructions }}</p>
                 {% endif %}
-                <button type="button" 
-                        class="droppablefileinput__clear" 
-                        style="display: none"
-                        aria-label="{% trans 'Clear selected file' %}">
-                    {% trans "Clear" %}
-                </button>
-                <div class="droppablefileinput__spinner"
-                     role="status"
-                     aria-label="{% trans 'Uploading file...' %}"
-                     style="display: none">
-                    <span class="droppablefileinput__spinner-text">{% trans "Uploading..." %}</span>
+                <div class="droppablefileinput__controls">
+                    <button type="button" 
+                            class="droppablefileinput__clear" 
+                            style="display: none"
+                            aria-label="{% trans 'Clear selected file' %}">
+                        {% trans "Cancel" %}
+                    </button>
+                    <div class="droppablefileinput__spinner"
+                         role="status"
+                         aria-label="{% trans 'Uploading file...' %}"
+                         style="display: none">
+                        <span class="droppablefileinput__spinner-text">{% trans "Uploading..." %}</span>
+                    </div>
                 </div>
             </div>
         </div>
